@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  if (user)
+    p You are #{user.username}
+    a(href="/logout" class="btn-danger") Logout
+    br
+    a(href="/" class="btn-primary") Home
