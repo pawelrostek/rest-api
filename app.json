@@ -1,5 +1,5 @@
 {
-  "name": "API template shop",
+  "name": "REST API template shop",
   "description": "A barebones Node.js app using Express 4",
   "repository": "https://github.com/pawelrostek/ngtest.git",
   "logo": "http://node-js-sample.herokuapp.com/node.svg",
