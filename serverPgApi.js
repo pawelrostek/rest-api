@@ -3,7 +3,8 @@
 var express = require('express');
 var path    = require('path');
 var logger  = require('morgan');
-var favicon = require('static-favicon');
+var favicon = require('serve-favicon');
+// var favicon = require('static-favicon');
 
 // EXPRESS
 var app = express();
@@ -12,7 +13,7 @@ var app = express();
 
 //CONFIGURE
 app.set('port', (process.env.PORT || 4000));
-app.use(favicon());
+app.use(favicon(path.join(__dirname,'public','favicon.ico')));
 app.use(logger('dev'));
 
 // ROUTES
@@ -22,7 +23,7 @@ app.use(function(req, res, next) {
   next();
 });
 app.use('/', require('./routes/default'));
-app.use('/shopApi', require('./routes/shop/api'));
+app.use('/pgApi', require('./routes/shop/pgApi'));
 
 
 // START SERVER

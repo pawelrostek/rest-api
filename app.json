@@ -1,7 +1,7 @@
 {
-  "name": "REST API template shop",
+  "name": "REST API template shop (DB Postgresql)",
   "description": "A barebones Node.js app using Express 4",
-  "repository": "https://github.com/pawelrostek/ngtest.git",
+  "repository": "https://github.com/pawelrostek/rest-api.git",
   "logo": "http://node-js-sample.herokuapp.com/node.svg",
-  "keywords": ["node", "express", "static", "api", "rest"]
+  "keywords": ["node", "express", "static", "api", "rest", "postgres"]
 }

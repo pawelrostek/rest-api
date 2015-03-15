@@ -4,7 +4,7 @@ var restful = require('node-restful'),
 
 
 // NAVIGATION INFO LOG
-console.log("Include Model klients");
+console.log("Include Model clients");
 
 // DATABASE SCHEMA
 var klientSchema = new mongoose.Schema({
