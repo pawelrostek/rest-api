@@ -30,26 +30,39 @@ router.get('/clients', function(request, response) {
 			response.send(callback);
 		});	
 	}
-	if(request.method == 'POST') {
-		var data = request.data;
-		Client.insert(data);
-		console.log("INSERT");
-		response.status(200).end();	
-	}
-	if(request.method == 'PUT') {
-		var id = request.client_id;
-		var key = request.key;
-		var value = request.value;
-		Client.update(id, key, value);
-		console.log([id, key, value]);
-		console.log("UPDATE");
-		response.status(200).end();	
-	}
-	if(request.method == 'DELETE') {
-		var id = request.client_id;
-		Client.delete(id);	
-		console.log("DELETE");
-		response.status(200).end();	
+	// if(request.method == 'POST') {
+	// 	var data = request.data;
+	// 	Client.insert(data);
+	// 	console.log("INSERT");
+	// 	response.status(200).end();	
+	// }
+	// if(request.method == 'PUT') {
+	// 	var id = request.client_id;
+	// 	var key = request.key;
+	// 	var value = request.value;
+	// 	Client.update(id, key, value);
+	// 	console.log([id, key, value]);
+	// 	console.log("UPDATE");
+	// 	response.status(200).end();	
+	// }
+	// if(request.method == 'DELETE') {
+	// 	var id = request.client_id;
+	// 	Client.delete(id);	
+	// 	console.log("DELETE");
+	// 	response.status(200).end();	
+	// }
+});
+
+// MODELS
+productModel = require("../../models/pgDb/products");
+Product = new productModel(db);
+
+router.get('/products', function(request, response) {
+
+	if(request.method == 'GET') {
+		Product.getAll(function(callback){
+			response.send(callback);
+		});	
 	}
 });
 
